@@ -16,24 +16,11 @@ import colors from '../assets/colors/colors';
 import { color, round } from 'react-native-reanimated';
 import {Feather} from '@expo/vector-icons'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
-import {connect} from 'react-redux';
-
 
 Feather.loadFont();
 MaterialCommunityIcons.loadFont();
 
-
-const mapstatetoprops=(state)=>{
-
-  return{
-    data:state.data
-  }
-
-}
-
-
-
-const Home = ({navigation}) => {
+export default Search = ({ navigation }) => {
   const renderCategoryItem = ({ item }) => {
     return (
       <View
@@ -72,140 +59,25 @@ const Home = ({navigation}) => {
         {/* Header */}
         <SafeAreaView>
           <View style={styles.headerWrapper}>
-          <Text style={{fontWeight:'bold',fontSize:17}} ></Text>
-          <Feather name="menu" size={24} color={colors.textDark} />
+         
+         <Text style={{fontWeight:'bold',fontSize:17}} >Hey,Haris</Text>
+            <Feather name="menu" size={24} color={colors.textDark} />
           </View>
         </SafeAreaView>
 
         {/* Titles */}
         <View style={styles.titlesWrapper}>
-          <Text style={styles.titlesSubtitle}>Resturant</Text>
-          <Text style={styles.titlesTitle}>Recommdation</Text>
+          <Text style={styles.titlesSubtitle}>Popular Resturants </Text>
+          <Text style={styles.titlesTitle}>Pizza</Text>
         </View>
 
         {/* Search */}
-        <View style={styles.searchWrapper}>
-          <Feather name="search" size={16} color={colors.textDark} />
-          <View style={styles.search}>
-       <TextInput style={styles.searchText} >Search</TextInput>
-          </View>
-        </View>
+        
 
         {/* Categories */}
-        <View style={styles.categoriesWrapper } >
-          <Text style={styles.categoriesTitle} onPress={()=>navigation.navigate('Search')} >Categories</Text>
-          <View style={styles.categoriesListWrapper}>
-            <FlatList
-              data={categoriesData}
-              renderItem={renderCategoryItem}
-              keyExtractor={(item) => item.id}
-              horizontal={true}
-              onPress={()=>navigation.navigate('Login')}
-        />
-          </View>
-        </View>
-
-
-        <View style={styles.titlesWrapper}>
-          <Text style={styles.titlesSubtitle}>Popular Resturants </Text>
-        </View>
-
+ 
         {/* Popular */}
-        <View
-                style={[
-                  styles.popularCardWrapper,
-                  {
-               //     marginTop: item.id == 1 ? 10 : 20,
-                  },
-                ]}>
-                <View>
-                  <View>
-                    <View style={styles.popularTopWrapper} style={{marginTop:5}} >
-                      <MaterialCommunityIcons
-                        name="crown"
-                        size={12}
-                        color={colors.primary}
-                      />
-                      <Text style={styles.popularTopText}>Burger King</Text>
-                    </View>
-                    <View style={styles.popularTitlesWrapper}>
-                      <Text style={styles.popularTitlesTitle}>
-                      
-                      </Text>
-                      <Text style={styles.popularTitlesWeight}>
-                      LOC.Gulshan-e-Johore
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={styles.popularCardBottom}  >
-                    <View style={styles.addPizzaButton}>
-                     <Text style={{fontWeight:'bold',color:'white'}} onPress={()=>navigation.navigate('Fast')} >Book Now</Text>
-                    </View>
-                    <View style={styles.ratingWrapper}>
-                      <MaterialCommunityIcons
-                        name="star"
-                        size={10}
-                        color={colors.textDark}
-                      />
-                      <Text style={styles.rating}>5.0</Text>
-                    </View>
-                  </View>
-                </View>
-
-                <View style={styles.popularCardRight}>
-                  <Image source={require('../Images/burger_king.jpg')} style={styles.popularCardImage} />
-                </View>
-              </View>
-
-
-
-  
-              <View
-                style={[
-                  styles.popularCardWrapper,
-                  {
-               //     marginTop: item.id == 1 ? 10 : 20,
-                  },
-                ]}>
-                <View>
-                  <View>
-                    <View style={styles.popularTopWrapper}>
-                      <MaterialCommunityIcons
-                        name="crown"
-                        size={12}
-                        color={colors.primary}
-                      />
-                      <Text style={styles.popularTopText}>MC donald</Text>
-                    </View>
-                    <View style={styles.popularTitlesWrapper}>
-                      <Text style={styles.popularTitlesTitle}>
-                      
-                      </Text>
-                      <Text style={styles.popularTitlesWeight}>
-                     LOC.Gulshan-e-Iqbal
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={styles.popularCardBottom}>
-                    <View style={styles.addPizzaButton}  >
-                     <Text style={{fontWeight:'bold',color:'white'}} >Book Now</Text>
-                    </View>
-                    <View style={styles.ratingWrapper}>
-                      <MaterialCommunityIcons
-                        name="star"
-                        size={10}
-                        color={colors.textDark}
-                      />
-                      <Text style={styles.rating}>4.5</Text>
-                    </View>
-                  </View>
-                </View>
-
-                <View style={styles.popularCardRight}>
-                  <Image source={require('../Images/mcdonald.png')} style={styles.popularCardImage} />
-                </View>
-              </View>
-  
+          
               <View
                 style={[
                   styles.popularCardWrapper,
@@ -251,7 +123,54 @@ const Home = ({navigation}) => {
                   <Image source={require('../Images/pizza_hut.jpg')} style={styles.popularCardImage} onPress={()=>this.props.navigation.navigate('Check')} />
                 </View>
               </View>
+  
+              <View
+                style={[
+                  styles.popularCardWrapper,
+                  {
+               //     marginTop: item.id == 1 ? 10 : 20,
+                  },
+                ]}>
+                <View>
+                  <View>
+                    <View style={styles.popularTopWrapper} style={{marginTop:5}} >
+                      <MaterialCommunityIcons
+                        name="crown"
+                        size={12}
+                        color={colors.primary}
+                      />
+                      <Text style={styles.popularTopText}>Pizza Max</Text>
+                    </View>
+                    <View style={styles.popularTitlesWrapper}>
+                      <Text style={styles.popularTitlesTitle}>
+                      
+                      </Text>
+                      <Text style={styles.popularTitlesWeight}>
+                      LOC.Gulshan-e-Johore
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={styles.popularCardBottom}  >
+                    <View style={styles.addPizzaButton}>
+                     <Text style={{fontWeight:'bold',color:'white'}} >Book Now</Text>
+                    </View>
+                    <View style={styles.ratingWrapper}>
+                      <MaterialCommunityIcons
+                        name="star"
+                        size={10}
+                        color={colors.textDark}
+                      />
+                      <Text style={styles.rating}>5.0</Text>
+                    </View>
+                  </View>
+                </View>
 
+                <View style={styles.popularCardRight}>
+                  <Image source={require('../Images/pizza_max.png')} style={styles.popularCardImage} />
+                </View>
+              </View>
+  
+  
               <View
                 style={[
                   styles.popularCardWrapper,
@@ -299,14 +218,57 @@ const Home = ({navigation}) => {
               </View>
   
 
-         
+              <View
+                style={[
+                  styles.popularCardWrapper,
+                  {
+               //     marginTop: item.id == 1 ? 10 : 20,
+                  },
+                ]}>
+                <View>
+                  <View>
+                    <View style={styles.popularTopWrapper}>
+                      <MaterialCommunityIcons
+                        name="crown"
+                        size={12}
+                        color={colors.primary}
+                      />
+                      <Text style={styles.popularTopText}>Pizza Hut</Text>
+                    </View>
+                    <View style={styles.popularTitlesWrapper}>
+                      <Text style={styles.popularTitlesTitle}>
+                      
+                      </Text>
+                      <Text style={styles.popularTitlesWeight}>
+                        Weight 
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={styles.popularCardBottom}>
+                    <View style={styles.addPizzaButton}>
+                     <Text style={{fontWeight:'bold',color:'white'}} >Book Now</Text>
+                    </View>
+                    <View style={styles.ratingWrapper}>
+                      <MaterialCommunityIcons
+                        name="star"
+                        size={10}
+                        color={colors.textDark}
+                      />
+                      <Text style={styles.rating}>ndfn</Text>
+                    </View>
+                  </View>
+                </View>
+
+                <View style={styles.popularCardRight}>
+                  <Image source={require('../Images/fod.jpg')} style={styles.popularCardImage} />
+                </View>
+              </View>
+  
 
 
+  </ScrollView>
+   </View>
 
-
-
-      </ScrollView>
-    </View>
   );
 };
 
@@ -439,14 +401,14 @@ const styles = StyleSheet.create({
   popularTopText: {
     marginLeft: 10,
     fontFamily: 'Montserrat-SemiBold',
-    fontSize: 14,
+    fontSize:20 ,
   },
   popularTitlesWrapper: {
     marginTop: 20,
   },
   popularTitlesTitle: {
     fontFamily: 'Montserrat-SemiBold',
-    fontSize: 14,
+    fontSize: 18,
     color: colors.textDark,
   },
   popularTitlesWeight: {
@@ -488,6 +450,3 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 });
-
-
-export default connect(mapstatetoprops)(Home)
